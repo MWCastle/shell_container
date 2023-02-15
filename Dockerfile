@@ -4,6 +4,6 @@ COPY . /cwd
 
 WORKDIR /cwd
 
-RUN apt-get clean && apt-get update && apt-get install ruby2.7 && apt-get install net-tools && bundle install
+RUN apt-get clean && apt-get update && apt-get -y install ruby2.7 && apt-get install net-tools && bundle install
 
 ENTRYPOINT ["/bin/bash"]
