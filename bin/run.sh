@@ -5,7 +5,7 @@ gpg2 --keyserver hkp://keyserver.ubuntu.com --recv-keys 409B6B1796C275462A170311
 cat rvm.sh | bash -s stable --rails
 source /usr/local/rvm/scripts/rvm
 source /etc/profile.d/rvm.sh
-sudo usermod -a -G rvm root
+# sudo usermod -a -G rvm root
 rvm install 2.7.4
 rvm use 2.7.4
 gem install bundler -v 2.4.7
