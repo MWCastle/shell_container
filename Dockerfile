@@ -21,4 +21,4 @@ RUN apt-get clean && apt-get update \
     && bash -s gem install rails -v 7.0.2 \
     && bash -s bundle install
 
-ENTRYPOINT ["/bin/bash"]
+# ENTRYPOINT ["/bin/bash"]
