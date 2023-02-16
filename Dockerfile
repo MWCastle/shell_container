@@ -11,10 +11,9 @@ RUN apt-get clean && apt-get update \
     7D2BAF1CF37B13E2069D6956105BD0E739499BDB \
     && \curl -sSL https://get.rvm.io -o rvm.sh \
     && cat rvm.sh | bash -s stable --rails \
-    && ls -l /usr/local/rvm/scripts \
-    && ["/bin/bash", "-c", "source /usr/local/rvm/scripts/rvm"] \
-    && rvm install 2.7.4 && rvm use 2.7.4 \
-    && gem install bundler -v 2.4.7 \
+    && gem install bundler -v 2.4.7
+RUN ["/bin/bash", "-c", "source /usr/local/rvm/scripts/rvm"]
+RUN rvm install 2.7.4 && rvm use 2.7.4 \
     && gem install rails -v 7.0.2 \
     && apt-get install net-tools && bundle install
 
