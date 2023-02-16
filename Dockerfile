@@ -12,7 +12,7 @@ RUN apt-get clean && apt-get update \
     && \curl -sSL https://get.rvm.io -o rvm.sh \
     && cat rvm.sh | bash -s stable --rails \
     && ls -l /usr/local/rvm/scripts \
-    && source ../usr/local/rvm/scripts/rvm \
+    && ["/bin/bash", "-c", "source /usr/local/rvm/scripts/rvm"] \
     && rvm install 2.7.4 && rvm use 2.7.4 \
     && gem install bundler -v 2.4.7 \
     && gem install rails -v 7.0.2 \
