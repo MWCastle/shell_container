@@ -4,7 +4,8 @@
 #echo "RVM_OUT:"
 #echo "$rvm_out"
 
-echo "$(man which)"
+rvm_out=$(which rvm)
+echo $rvm_out
 
 if which rvm
 then
