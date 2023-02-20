@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rvm_out=$(echo rvm)
+rvm_out=$(rvm)
 echo "$rvm_out"
 
 if [ "$rvm_out" == "/cwd/bin/run.sh: line 3: rvm: command not found" ]
