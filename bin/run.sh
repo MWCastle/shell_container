@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# source ~/.bashrc
+source ~/.bashrc
 
 #rvm_out=$(echo "$(which rvm)")
 #echo "RVM_OUT:"
