@@ -12,7 +12,7 @@ which rvm
 echo $?
 which rvm
 
-if $? == 0
+if [ $? == 0 ]
 then
   echo "Initialized Shell Container Detected. Opening Command Line..."
 else
