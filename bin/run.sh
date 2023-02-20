@@ -1,13 +1,16 @@
 #!/bin/bash
 
-rvm_out=$(echo "$(which rvm)")
-echo "RVM_OUT:"
-echo "$rvm_out"
+#rvm_out=$(echo "$(which rvm)")
+#echo "RVM_OUT:"
+#echo "$rvm_out"
+#
+#rvm_out=$(which rvm)
+#echo $rvm_out
 
-rvm_out=$(which rvm)
-echo $rvm_out
+which rvm
+echo $?
 
-if which rvm
+if $? == 0
 then
   echo "Initialized Shell Container Detected. Opening Command Line..."
 else
