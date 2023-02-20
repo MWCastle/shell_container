@@ -14,11 +14,14 @@ RUN apt-get clean && apt-get update \
     && cat rvm.sh | bash -s stable --rails \
     && bash -s source /usr/local/rvm/scripts/rvm \
     && bash -s source /etc/profile.d/rvm.sh \
-    && bash -s echo "source /etc/profile.d/rvm.sh" >> ~/.bashrc \
     && bash -s rvm install 2.7.4 \
     && bash -s rvm use 2.7.4 \
     && bash -s gem install bundler -v 2.4.7 \
     && bash -s gem install rails -v 7.0.2 \
-    && bash -s bundle install
+    && bash -s bundle install \
+
+WORKDIR ~/
+
+RUN bash -s echo "source /etc/profile.d/rvm.sh" >> ~/.bashrc
 
 ENTRYPOINT ["/cwd/bin/run.sh"]
