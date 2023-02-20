@@ -7,6 +7,9 @@
 #rvm_out=$(which rvm)
 #echo $rvm_out
 
+
+which rvm
+ech $?
 which rvm
 
 if $? == 0
