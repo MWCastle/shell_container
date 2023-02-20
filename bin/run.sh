@@ -8,7 +8,6 @@
 #echo $rvm_out
 
 which rvm
-echo $?
 
 if $? == 0
 then
