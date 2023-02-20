@@ -4,7 +4,7 @@
 #echo "RVM_OUT:"
 #echo "$rvm_out"
 
-which rvm
+echo "$(which rvm)"
 
 if which rvm
 then
@@ -17,7 +17,7 @@ else
     source /usr/local/rvm/scripts/rvm
     source /etc/profile.d/rvm.sh
     # sudo usermod -a -G rvm root
-    rvm install 2.7.4
+ .4
     rvm use 2.7.4
     gem install bundler -v 2.4.7
     gem install rails -v 7.0.2
