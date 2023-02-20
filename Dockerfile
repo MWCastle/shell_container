@@ -19,9 +19,9 @@ RUN apt-get clean && apt-get update \
     && bash -s gem install bundler -v 2.4.7 \
     && bash -s gem install rails -v 7.0.2 \
     && bash -s bundle install
-
-WORKDIR ~/
-
-RUN bash -s echo "source /etc/profile.d/rvm.sh" >> ~/.bashrc
+#
+#WORKDIR ~/
+#
+#RUN bash -s echo "source /etc/profile.d/rvm.sh" >> ~/.bashrc
 
 ENTRYPOINT ["/cwd/bin/run.sh"]

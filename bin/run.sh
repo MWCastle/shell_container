@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "source /etc/profile.d/rvm.sh" >> ~/.bashrc
+echo "source /etc/profile.d/rvm.sh" >> ~/.bashrc
 source ~/.bashrc
 
 #rvm_out=$(echo "$(which rvm)")
