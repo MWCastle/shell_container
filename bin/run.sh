@@ -9,7 +9,7 @@
 
 
 which rvm
-ech $?
+echo $?
 which rvm
 
 if $? == 0
