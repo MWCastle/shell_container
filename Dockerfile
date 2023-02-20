@@ -18,10 +18,6 @@ RUN apt-get clean && apt-get update \
     && bash -s rvm use 2.7.4 \
     && bash -s gem install bundler -v 2.4.7 \
     && bash -s gem install rails -v 7.0.2 \
-    && bash -s bundle install \
-
-WORKDIR ~/
-
-RUN bash -s echo "source /etc/profile.d/rvm.sh" >> ~/.bashrc
+    && bash -s bundle install
 
 ENTRYPOINT ["/cwd/bin/run.sh"]
