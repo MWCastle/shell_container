@@ -1,6 +1,7 @@
 #!/bin/bash
 
 rvm_out=$(echo $(rvm))
+echo "$rvm_out"
 if [ "$rvm_out" == "/cwd/bin/run.sh: line 3: rvm: command not found" ]
 then
   echo "New Shell Container Detected. Installing Startup Packages."
