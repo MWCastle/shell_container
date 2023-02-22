@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "source /etc/profile.d/rvm.sh" >> ~/.bashrc
+#echo "source /etc/profile.d/rvm.sh" >> ~/.bashrc
 source ~/.bashrc
 tar -xvf ruby-3.1.2.tar.gz
 
