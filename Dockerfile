@@ -12,9 +12,12 @@ RUN apt-get clean && apt-get update \
     7D2BAF1CF37B13E2069D6956105BD0E739499BDB \
     && \curl -sSL https://get.rvm.io -o rvm.sh \
     && cat rvm.sh | bash -s stable --rails \
-    && bash -s source /usr/local/rvm/scripts/rvm \
-    && bash -s source /etc/profile.d/rvm.sh \
-    && bash -s rvm install 2.7.4 \
+
+RUN bash -s source /usr/local/rvm/scripts/rvm
+
+RUN bash -s source /etc/profile.d/rvm.sh
+
+RUN bash -s rvm install 2.7.4 \
     && bash -s rvm use 2.7.4 \
     && bash -s gem install bundler -v 2.4.7 \
     && bash -s gem install rails -v 7.0.2 \
