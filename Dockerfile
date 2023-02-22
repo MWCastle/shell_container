@@ -7,7 +7,7 @@ WORKDIR /cwd
 RUN apt-get clean && apt-get update \
     && apt-get -y install curl \
     && apt-get install net-tools \
-    && /usr/bin/curl -sS https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz >> ruby-3.1.2.tar.gz \
+    && /usr/bin/curl -sSo https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.1.tar.gz \
     && bash -s tar -xzvf ruby-3.1.2.tar.gz
 
 WORKDIR /cwd/ruby-3.1.2
