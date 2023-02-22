@@ -19,10 +19,12 @@ RUN apt-get clean && apt-get update \
     && bash -s gem install bundler -v 2.4.7 \
     && bash -s gem install rails -v 7.0.2 \
     && bash -s gem install csv \
-    && bash -s gem install faraday \
     && bash -s gem install faraday_middleware \
     && bash -s gem install json \
     && bash -s gem install rubyXL
+
+
+RUN bash -s gem install faraday
 
 
 ENTRYPOINT ["/cwd/bin/run.sh"]
