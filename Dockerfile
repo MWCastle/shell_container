@@ -9,9 +9,7 @@ RUN apt-get clean && apt-get update \
     && apt-get -y install curl \
     && apt-get install net-tools \
     && /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
-    && /usr/bin/tar -xvf ruby-3.1.2.tar.gz
-
-WORKDIR /cwd/ruby-3.1.2
+    && /usr/bin/tar -xvf ruby-3.1.2.tar.gz -C ./ruby-3.1.2
 
 RUN bash -s ./configure && echo $?
     #&& bash -s make && bash -s make install
