@@ -5,7 +5,8 @@ COPY . /cwd/
 WORKDIR /cwd
 
 RUN apt-get clean && apt-get update \
-    && apt-get install -y build-essential curl net-tools \
+    && apt-get install -y build-essential curl net-tools checkinstall zlibig-dev \
+    && wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
 #    && apt-get -y install curl \
 #    && apt-get install net-tools \
     && /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
