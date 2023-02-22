@@ -15,7 +15,7 @@ RUN apt-get clean && apt-get update \
     && bash -s source /usr/local/rvm/scripts/rvm \
     && bash -s source /etc/profile.d/rvm.sh
 
-RUN bash -s rvm install 3.1.2 && echo $?
+RUN rvm install 3.1.2
 
 RUN bash -s rvm use 3.1.2 \
     && bash -s gem install bundler -v 2.4.7 \
