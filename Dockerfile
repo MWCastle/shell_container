@@ -22,8 +22,7 @@ RUN apt-get clean && apt-get update \
     && bash -s gem install faraday \
     && bash -s gem install faraday_middleware \
     && bash -s gem install json \
-    && bash -s gem install rubyXL \
-    && bash -s bundle install
+    && bash -s gem install rubyXL
 
 
 ENTRYPOINT ["/cwd/bin/run.sh"]
