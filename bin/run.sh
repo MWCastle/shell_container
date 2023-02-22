@@ -2,6 +2,7 @@
 
 echo "source /etc/profile.d/rvm.sh" >> ~/.bashrc
 source ~/.bashrc
+bundle install
 
 #rvm_out=$(echo "$(which rvm)")
 #echo "RVM_OUT:"
