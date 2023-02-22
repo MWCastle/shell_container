@@ -7,7 +7,7 @@ WORKDIR /cwd
 RUN apt-get clean && apt-get update \
     && apt-get -y install curl \
     && apt-get install net-tools \
-    && /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.1.tar.gz \
+    && /usr/bin/curl -sSo penis.tar.gz https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.1.tar.gz \
     && bash -s tar -xvf ruby-3.1.2.tar.gz
     #&& bash -s .ruby-3.1.2/configure && bash -s ruby-3.1.2/make && bash -s ruby-3.1.2/make install
 #    && gpg2 --keyserver hkp://keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 \
