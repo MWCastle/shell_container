@@ -8,8 +8,8 @@ RUN apt-get clean && apt-get update \
     && apt-get install -y build-essential\
     && apt-get -y install curl \
     && apt-get install net-tools \
-    && /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
-    && bash -s cd ruby-3.1.2 && bash -s ./configure && bash -s make && bash -s make install
+    && /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz
+    #&& bash -s cd ruby-3.1.2 && bash -s ./configure && bash -s make && bash -s make install
 #    && gpg2 --keyserver hkp://keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 \
 #    7D2BAF1CF37B13E2069D6956105BD0E739499BDB \
 #    && \curl -sSL https://get.rvm.io -o rvm.sh \
