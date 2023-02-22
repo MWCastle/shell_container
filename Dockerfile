@@ -11,6 +11,7 @@ RUN apt-get clean && apt-get update \
     && /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
     && /usr/bin/tar -xvf ruby-3.1.2.tar.gz \
     && cd ./ruby-3.1.2 && bash -s ls && ./configure && /usr/bin/make && /usr/bin/make install \
+    && gem update \
     && gem install faraday
     #&& bash -s make && bash -s make install
 #    && gpg2 --keyserver hkp://keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 \
