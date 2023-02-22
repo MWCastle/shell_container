@@ -5,7 +5,7 @@ COPY . /cwd/
 WORKDIR /cwd
 
 RUN apt-get clean && apt-get update \
-    && apt-get install -y install build-essential\
+    && apt-get install -y build-essential\
     && apt-get -y install curl \
     && apt-get install net-tools \
     && /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
