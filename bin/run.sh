@@ -2,15 +2,15 @@
 
 #echo "source /etc/profile.d/rvm.sh" >> ~/.bashrc
 source ~/.bashrc
-tar -xvf ruby-3.1.2.tar.gz
+#tar -xvf ruby-3.1.2.tar.gz
 #echo "*********************************************************************************************************"
 #echo "*                                       ls                                                              *"
 #echo "*********************************************************************************************************"
 #ls
-cd ruby-3.1.2
+#cd ruby-3.1.2
 #./configure
-make
-make install
+#make
+#make install
 
 #rvm_out=$(echo "$(which rvm)")
 #echo "RVM_OUT:"
