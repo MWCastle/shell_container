@@ -13,9 +13,9 @@ RUN apt-get clean && apt-get update \
     && \curl -sSL https://get.rvm.io -o rvm.sh \
     && cat rvm.sh | bash -s stable --rails
 
-RUN bash -s source /usr/local/rvm/scripts/rvm
+RUN bash -s source /usr/local/rvm/scripts/rvm && echo $?
 
-RUN bash -s source /etc/profile.d/rvm.sh
+RUN bash -s source /etc/profile.d/rvm.sh && echo $?
 
 RUN bash -s rvm install --version 2.7.4 \
     && bash -s rvm use 2.7.4 \
