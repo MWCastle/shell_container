@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-COPY . ../oompa_loompas ../2.0_tools /cwd/
+COPY . /cwd/
 
 WORKDIR /cwd
 
