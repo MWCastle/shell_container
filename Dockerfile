@@ -6,8 +6,8 @@ WORKDIR /cwd
 
 #### DEPENDENCIES ####
 RUN apt-get clean && apt-get update \
-    && apt-get install -y build-essential curl libssl-dev net-tools checkinstall wget zlib1g-dev \
-    && groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
+    && apt-get install -y build-essential curl libssl-dev net-tools checkinstall wget zlib1g-dev
+    #&& groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
 
     ### OPENSSL INSTALLATION ####
 #RUN wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
@@ -18,8 +18,8 @@ RUN apt-get clean && apt-get update \
 
     #### RUBY 3.1.2 INSTALLATION ####
 RUN /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
-    && /usr/bin/tar -xvf ruby-3.1.2.tar.gz
-#RUN cd ./ruby-3.1.2 && ./configure && /usr/bin/make && /usr/bin/make test && /usr/bin/make install
+    && /usr/bin/tar -xvf ruby-3.1.2.tar.gz \
+    && cd ./ruby-3.1.2 && ./configure && /usr/bin/make && /usr/bin/make install
     #### GEM MANAGEMENT ####
 #RUN gem update
 #RUN gem install faraday
