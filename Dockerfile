@@ -11,7 +11,7 @@ RUN apt-get clean && apt-get update \
      # WAS A WGET COMMAND
     && wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
     && /usr/bin/tar -xvf openssl-1.1.1k.tar.gz \
-    && cd ./openssl-1.1.1k && ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib && /usr/bin/make && /usr/bin/make install && cd .. \
+    && cd ./openssl-1.1.1k && ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib && /usr/bin/make && /usr/bin/make test && /usr/bin/make install && cd .. \
     #### RUBY 3.1.2 INSTALLATION ####
     && /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
     && /usr/bin/tar -xvf ruby-3.1.2.tar.gz \
