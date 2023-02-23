@@ -6,8 +6,7 @@ WORKDIR /cwd
 
 #### DEPENDENCIES ####
 RUN apt-get clean && apt-get update \
-    && apt-get install -y build-essential curl net-tools checkinstall wget zlib1g-dev \
-    && groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
+    && apt-get install -y build-essential curl net-tools checkinstall wget zlib1g-dev
 
     ### OPENSSL INSTALLATION ####
 RUN wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
