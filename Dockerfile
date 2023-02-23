@@ -11,8 +11,8 @@ RUN apt-get clean && apt-get update \
     ### OPENSSL INSTALLATION ####
 RUN wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
     && /usr/bin/tar -xvf openssl-1.1.1k.tar.gz \
-    && cd ./openssl-1.1.1k && ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib && /usr/bin/make \
-    && chmod +x Makefile && groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
+#    && cd ./openssl-1.1.1k && ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib && /usr/bin/make
+#    && chmod +x Makefile && groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
 
 USER king
 RUN cd ./openssl-1.1.1k && /usr/bin/make test
