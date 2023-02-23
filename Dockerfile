@@ -7,22 +7,13 @@ WORKDIR /cwd
 #### DEPENDENCIES ####
 RUN apt-get clean && apt-get update \
     && apt-get install -y build-essential curl libssl-dev net-tools checkinstall wget zlib1g-dev
-    #&& groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
-
-    ### OPENSSL INSTALLATION ####
-#RUN wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
-#    && /usr/bin/tar -xvf openssl-1.1.1k.tar.gz
-#RUN cd ./openssl-1.1.1k && ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib
-# && /usr/bin/make
-#    && chmod +x Makefile && groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
 
     #### RUBY 3.1.2 INSTALLATION ####
 RUN /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
     && /usr/bin/tar -xvf ruby-3.1.2.tar.gz \
     && cd ./ruby-3.1.2 && ./configure && /usr/bin/make && /usr/bin/make install
     #### GEM MANAGEMENT ####
-#RUN gem update
-RUN gem install faraday
+RUN gem install faraday faraday_middleware
     #&& bash -s make && bash -s make install
 #    && gpg2 --keyserver hkp://keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 \
 #    7D2BAF1CF37B13E2069D6956105BD0E739499BDB \
