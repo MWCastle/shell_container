@@ -24,7 +24,7 @@ RUN /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.
     && cd ./ruby-3.1.2 && ./configure && /usr/bin/make && /usr/bin/make install
     #### GEM MANAGEMENT ####
     # && gem update
-RUN gem install faraday
+RUN gem install -y faraday
     #&& bash -s make && bash -s make install
 #    && gpg2 --keyserver hkp://keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 \
 #    7D2BAF1CF37B13E2069D6956105BD0E739499BDB \
