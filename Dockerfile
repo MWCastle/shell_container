@@ -1,21 +1,24 @@
 FROM ubuntu:20.04
 
+RUN groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
+USER king
+
 COPY . /cwd/
 
 WORKDIR /cwd
 
-RUN apt-get clean && apt-get update \
+RUN apt-get clean && apt-get update
     #### DEPENDENCIES ####
-    && apt-get install -y build-essential curl net-tools checkinstall wget zlib1g-dev \
+#    && apt-get install -y build-essential curl net-tools checkinstall wget zlib1g-dev \
     ### OPENSSL INSTALLATION #### \
      # WAS A WGET COMMAND
-    && wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
-    && /usr/bin/tar -xvf openssl-1.1.1k.tar.gz \
-    && cd ./openssl-1.1.1k && ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib && /usr/bin/make && /usr/bin/make test && /usr/bin/make install && cd .. \
+#    && wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
+#    && /usr/bin/tar -xvf openssl-1.1.1k.tar.gz \
+#    && cd ./openssl-1.1.1k && ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib && /usr/bin/make && /usr/bin/make test && /usr/bin/make install && cd .. \
     #### RUBY 3.1.2 INSTALLATION ####
-    && /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
-    && /usr/bin/tar -xvf ruby-3.1.2.tar.gz \
-    && cd ./ruby-3.1.2 && ./configure && /usr/bin/make && /usr/bin/make install
+#    && /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
+#    && /usr/bin/tar -xvf ruby-3.1.2.tar.gz \
+#    && cd ./ruby-3.1.2 && ./configure && /usr/bin/make && /usr/bin/make install
     #### GEM MANAGEMENT ####
     # && gem update
     # && gem install faraday
@@ -32,10 +35,10 @@ RUN apt-get clean && apt-get update \
 #RUN ["/bin/bash", "-c", "source /usr/local/rvm/scripts/rvm", "rvm install 3.1.2", "rvm use 3.1.2"]
 
 
-RUN bash -s gem install rails -v 7.0.2 \
-    && bash -s gem install csv \
-    && bash -s gem install faraday_middleware \
-    && bash -s gem install json \
-    && bash -s gem install rubyXL
+#RUN bash -s gem install rails -v 7.0.2 \
+#    && bash -s gem install csv \
+#    && bash -s gem install faraday_middleware \
+#    && bash -s gem install json \
+#    && bash -s gem install rubyXL
 
 ENTRYPOINT ["/cwd/bin/run.sh"]
