@@ -1,18 +1,17 @@
 FROM ubuntu:20.04
 
-RUN groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
-#USER king
-
 COPY . /cwd/
 
 WORKDIR /cwd
 
-RUN apt-get clean && apt-get update
-    #### DEPENDENCIES ####
-#    && apt-get install -y build-essential curl net-tools checkinstall wget zlib1g-dev \
-    ### OPENSSL INSTALLATION #### \
-     # WAS A WGET COMMAND
-#    && wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
+#### DEPENDENCIES AND CREATING NON_ROOT USER ####
+RUN apt-get clean && apt-get update \
+    && apt-get install -y build-essential curl net-tools checkinstall wget zlib1g-dev \
+    && groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
+
+    ### OPENSSL INSTALLATION ####
+USER king
+RUN wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
 #    && /usr/bin/tar -xvf openssl-1.1.1k.tar.gz \
 #    && cd ./openssl-1.1.1k && ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib && /usr/bin/make && /usr/bin/make test && /usr/bin/make install && cd .. \
     #### RUBY 3.1.2 INSTALLATION ####
