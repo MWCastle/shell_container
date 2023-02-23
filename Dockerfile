@@ -15,7 +15,7 @@ RUN apt-get clean && apt-get update \
     #### RUBY 3.1.2 INSTALLATION ####
     && /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
     && /usr/bin/tar -xvf ruby-3.1.2.tar.gz \
-    && cd ./ruby-3.1.2 && ./configure && /usr/bin/make && /usr/bin/make install \
+    && cd ./ruby-3.1.2 && ./configure && /usr/bin/make && /usr/bin/make install
     #### GEM MANAGEMENT ####
     # && gem update
     # && gem install faraday
