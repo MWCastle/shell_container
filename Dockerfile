@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 RUN groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
-USER king
+#USER king
 
 COPY . /cwd/
 
