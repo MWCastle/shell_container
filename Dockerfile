@@ -14,8 +14,8 @@ RUN wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
 #    && cd ./openssl-1.1.1k && ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib && /usr/bin/make
 #    && chmod +x Makefile && groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
 
-USER king
-RUN cd ./openssl-1.1.1k && /usr/bin/make test
+#USER king
+#RUN cd ./openssl-1.1.1k && /usr/bin/make test
 #&& /usr/bin/make install && cd .. \
     #### RUBY 3.1.2 INSTALLATION ####
 #    && /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
