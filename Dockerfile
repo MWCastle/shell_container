@@ -6,10 +6,10 @@ WORKDIR /cwd
 
 RUN apt-get clean && apt-get update \
     #### DEPENDENCIES ####
-    && apt-get install -y build-essential curl net-tools checkinstall zlib1g-dev
+    && apt-get install -y build-essential curl net-tools checkinstall wget zlib1g-dev
     ### OPENSSL INSTALLATION #### \
      # WAS A WGET COMMAND
-RUN bash -s wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
+RUN wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz \
     && /usr/bin/tar -xvf openssl-1.1.1k.tar.gz \
     && cd ./openssl-1.1.1k && ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib && /usr/bin/make && /usr/bin/make test  && /usr/bin/make install && cd .. \
     #### RUBY 3.1.2 INSTALLATION ####
