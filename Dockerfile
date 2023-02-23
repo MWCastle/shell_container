@@ -24,7 +24,7 @@ RUN /usr/bin/curl -o ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/
     && chown king ruby-3.1.2.tar.gz
 
 USER king
-RUN /usr/bin/tar -xvf ruby-3.1.2.tar.gz \
+RUN /usr/bin/tar -xvf ruby-3.1.2.tar.gz
 #    && cd ./ruby-3.1.2 && ./configure && /usr/bin/make && /usr/bin/make install
     #### GEM MANAGEMENT ####
 #RUN gem update
