@@ -16,11 +16,11 @@ RUN apt-get clean && apt-get update \
 # && /usr/bin/make
 #    && chmod +x Makefile && groupadd -g 1859 kings && useradd -r -u 1859 -g kings king
 
-USER king
+#USER king
 #RUN cd ./openssl-1.1.1k && /usr/bin/make test
 #&& /usr/bin/make install && cd .. \
     #### RUBY 3.1.2 INSTALLATION ####
-#RUN /usr/bin/curl -o ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
+RUN /usr/bin/curl -o ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz
 #    && /usr/bin/tar -xvf ruby-3.1.2.tar.gz \
 #    && cd ./ruby-3.1.2 && ./configure && /usr/bin/make && /usr/bin/make install
     #### GEM MANAGEMENT ####
