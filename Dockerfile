@@ -16,9 +16,6 @@ RUN /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.
 #### GEM MANAGEMENT ####
 RUN gem install faraday faraday_middleware rubyXL
 
-#### SETTING USER ####
-USER $(id -u):$(id -g)
-
 #RUN bash -s gem install rails -v 7.0.2 \
 
 ENTRYPOINT ["/cwd/bin/run.sh"]
