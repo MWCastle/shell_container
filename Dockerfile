@@ -4,8 +4,6 @@ COPY . /cwd/
 
 WORKDIR /cwd
 
-USER $(id -u):$(id -g)
-
 #### DEPENDENCIES ####
 RUN apt-get clean && apt-get update \
     && apt-get install -y build-essential curl libssl-dev net-tools checkinstall wget zlib1g-dev
@@ -17,6 +15,9 @@ RUN /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.
 
 #### GEM MANAGEMENT ####
 RUN gem install faraday faraday_middleware rubyXL
+
+#### SETTING USER ####
+USER $(id -u):$(id -g)
 
 #RUN bash -s gem install rails -v 7.0.2 \
 
