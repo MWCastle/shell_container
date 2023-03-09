@@ -6,7 +6,7 @@ WORKDIR /cwd
 
 #### DEPENDENCIES ####
 RUN apt-get clean && apt-get update \
-    && apt-get install -y build-essential curl libssl-dev net-tools checkinstall wget zlib1g-dev
+    && apt-get install -y build-essential ca-certificates curl libssl-dev net-tools checkinstall wget zlib1g-dev
 
 #### RUBY 3.1.2 INSTALLATION ####
 RUN /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
@@ -16,16 +16,10 @@ RUN /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.
 #### GEM MANAGEMENT ####
 RUN gem install faraday faraday_middleware rubyXL
 
-# && useradd se-xy_shuttle -u 1002 -g 1002
-# RUN /usr/bin/bash groupadd -g 1002 && echo $?
+#### MAKING CONTAINER USER SAME AS SHUTTLE USER ####
 RUN useradd se-xy_shuttle && groupmod -g 1002 se-xy_shuttle && usermod -u 1002 -g 1002 se-xy_shuttle \
     && su se-xy_shuttle
-
 USER se-xy_shuttle
-#RUN groupadd -g $(id -g) se-xy_shuttle
-#RUN echo $(id -g)
-#RUN su se-xy_shuttle
-# USER se-xy_shuttle
 
 #RUN bash -s gem install rails -v 7.0.2 \
 
