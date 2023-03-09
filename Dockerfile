@@ -21,7 +21,7 @@ RUN gem install faraday faraday_middleware rubyXL
 # RUN useradd -u $(id -u) se-xy_shuttle
 #RUN groupadd -g $(id -g) se-xy_shuttle
 #RUN echo $(id -g)
-RUN su se-xy_shuttle
+#RUN su se-xy_shuttle
 # USER se-xy_shuttle
 
 #RUN bash -s gem install rails -v 7.0.2 \
