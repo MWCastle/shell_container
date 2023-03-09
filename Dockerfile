@@ -20,6 +20,8 @@ RUN gem install faraday faraday_middleware rubyXL
 # RUN /usr/bin/bash groupadd -g 1002 && echo $?
 RUN useradd se-xy_shuttle && groupmod -g 1002 se-xy_shuttle && usermod -u 1002 -g 1002 se-xy_shuttle \
     && su se-xy_shuttle
+
+USER se-xy_shuttle
 #RUN groupadd -g $(id -g) se-xy_shuttle
 #RUN echo $(id -g)
 #RUN su se-xy_shuttle
