@@ -6,7 +6,7 @@ WORKDIR /cwd
 
 #### DEPENDENCIES ####
 RUN apt-get clean && apt-get update \
-    && apt-get install -y build-essential ca-certificates curl libssl-dev net-tools checkinstall wget zlib1g-dev
+    && apt-get install -y build-essential curl libssl-dev net-tools checkinstall wget zlib1g-dev
 
 #### RUBY 3.1.2 INSTALLATION ####
 RUN /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz \
