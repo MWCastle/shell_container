@@ -16,7 +16,7 @@ RUN /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.
 #### GEM MANAGEMENT ####
 RUN gem install faraday faraday_middleware rubyXL
 
-RUN bash -c useradd se-xy_shuttle -u 1002 -g 1002
+RUN /usr/bin/bash -c useradd se-xy_shuttle -u 1002 -g 1002
 USER se-xy_shuttle
 
 #RUN bash -s gem install rails -v 7.0.2 \
