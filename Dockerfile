@@ -14,7 +14,7 @@ RUN /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.
     && cd ./ruby-3.1.2 && ./configure && /usr/bin/make && /usr/bin/make install
 
 #### GEM MANAGEMENT ####
-RUN gem install faraday faraday_middleware rubyXL
+RUN gem install faraday faraday_middleware rubyXL bigdecimal
 
 #### MAKING CONTAINER USER SAME AS SHUTTLE USER ####
 RUN useradd se-xy_shuttle && groupmod -g 1002 se-xy_shuttle && usermod -u 1002 -g 1002 se-xy_shuttle \
