@@ -16,6 +16,7 @@ RUN /usr/bin/curl -sSo ruby-3.1.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.
 #### GEM MANAGEMENT ####
 RUN gem install faraday faraday_middleware rubyXL bigdecimal
 
+# TODO: Need to make this just populate with whoever started it since there are two shuttles now
 #### MAKING CONTAINER USER SAME AS SHUTTLE USER ####
 RUN useradd se-xy_shuttle && groupmod -g 1002 se-xy_shuttle && usermod -u 1002 -g 1002 se-xy_shuttle \
     && su se-xy_shuttle
